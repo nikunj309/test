@@ -1,4 +1,3 @@
-
 //Only the first question has been completed. The second question remains
 
 import { Picker } from "react-native-dropdown-picker";
@@ -9,7 +8,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 
 const Pattern = () => {
@@ -27,7 +26,7 @@ const Pattern = () => {
     const array = [];
     for (let i = 0; i < num; i++) {
       let j = [];
-        for(let index = 0;  index <= i; index++) {
+      for (let index = 0; index <= i; index++) {
         const randomNumber = Math.floor(Math.random() * 100);
 
         if (!j.includes(randomNumber)) {
@@ -80,19 +79,20 @@ const Q2 = () => {
     { label: "T", value: "T" },
   ];
 
-  const handleValueChange = () => {
-
-  }
+  const handleSubmit = () => {
+    console.log(selectedValue);
+  };
 
   return (
     <View>
       <Text>Select option:</Text>
       <Picker
         selectedValue={null}
-        onValueChange={handleValueChange}
+        onValueChange={(value) => setSelectedValue(value)}
         items={items}
         placeholder="Select an item"
       />
+      <Button title="Submit" onPress={handleSubmit} />
       <Button onPress={() => setSelectedValue([])}>Reset</Button>
     </View>
   );
