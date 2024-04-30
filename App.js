@@ -1,6 +1,7 @@
 //Only the first question has been completed. The second question remains
 
 import { Picker } from "react-native-dropdown-picker";
+import Cmp2 from "./Cmp2"
 import { useState } from "react";
 import {
   Button,
@@ -71,32 +72,11 @@ const Pattern = () => {
   );
 };
 
-const Q2 = () => {
-  const [selectedValue, setSelectedValue] = useState([]);
-
-  const items = [
-    { label: "H", value: "H" },
-    { label: "T", value: "T" },
-  ];
-
-  const handleSubmit = () => {
-    console.log(selectedValue);
-  };
-
-  return (
-    <View>
-      <Text>Select option:</Text>
-      <Picker
-        selectedValue={null}
-        onValueChange={(value) => setSelectedValue(value)}
-        items={items}
-        placeholder="Select an item"
-      />
-      <Button title="Submit" onPress={handleSubmit} />
-      <Button onPress={() => setSelectedValue([])}>Reset</Button>
-    </View>
-  );
-};
+// const Q2 = () => {
+//   return(
+//     <Cmp2/>
+//   )
+// };
 
 export default function App() {
   const [cmp1, setCmp1] = useState(false);
@@ -113,12 +93,12 @@ export default function App() {
       <TouchableOpacity onPress={handler}>
         <Text>h1</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={handler2}>
+      <TouchableOpacity onPress={handler2} style={{marginTop:"35px"}}>
         <Text>h2</Text>
       </TouchableOpacity>
 
       {cmp1 && <Pattern />}
-      {cmp2 && <Q2 />}
+      {cmp2 && <Cmp2 />}
     </View>
   );
 }
