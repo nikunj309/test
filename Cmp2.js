@@ -26,7 +26,7 @@ const Cmp2 = () => {
 
   return (
     <View>
-      <Text>Select option:</Text>
+      <Text>Select option:</Text> 
       <Dropdown
         data={items}
         labelField="label"
