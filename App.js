@@ -21,6 +21,14 @@ const Pattern = () => {
     setInputText(text);
   };
 
+  const noRepeat = (number, array) => {
+    return array.every(subArray => !subArray.includes(number));
+  };
+
+  const generateRandomNum = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
   const handler = () => {
     // console.log("hello");
     const num = parseInt(inputText);
@@ -28,9 +36,9 @@ const Pattern = () => {
     for (let i = 0; i < num; i++) {
       let j = [];
       for (let index = 0; index <= i; index++) {
-        const randomNumber = Math.floor(Math.random() * 100);
+        const randomNumber = generateRandomNum(0,1000)
 
-        if (!j.includes(randomNumber)) {
+        if (!j.includes(randomNumber) && noRepeat(randomNum,array)) {
           j.push(randomNumber);
         }
       }
