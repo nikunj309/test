@@ -1,4 +1,4 @@
-//Only the first question has been completed. The second question remains
+
 
 import { Picker } from "react-native-dropdown-picker";
 import Cmp2 from "./Cmp2"
